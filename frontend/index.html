@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Mock Interviewer – Practice Like It's Real</title>
+  <meta name="description" content="An AI-powered mock interview platform. Upload your resume, speak your answers aloud, and get real-time feedback from an AI interviewer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7" />
+</head>
+<body>
+
+<!-- Animated Canvas Background -->
+<canvas id="bg-canvas" class="mesh-bg"></canvas>
+<div class="grid-overlay"></div>
+
+<!-- ══ Top Navigation Bar ══ -->
+<nav class="top-nav">
+  <div class="nav-brand">
+    <span class="nav-logo">🎯</span>
+    <span class="nav-title">Mock Interview Studio</span>
+  </div>
+  <div class="nav-links">
+    <span class="nav-link active">Interview</span>
+    <span class="nav-link" id="nav-feedback">Feedback</span>
+  </div>
+  <div class="nav-status">
+    <span class="connection-dot"></span>
+    <span class="connection-text">Connected</span>
+  </div>
+</nav>
+
+<div class="app-container">
+
+  <!-- ══════════════ PHASE 1: Resume Upload ══════════════ -->
+  <div id="resume-section" class="phase-container">
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        AI Powered · Real-time Feedback
+      </div>
+      <h1 class="hero-title">Mock Interview Studio</h1>
+      <p class="hero-subtitle">Upload your resume, practice technical interviews, and get scored by an AI interviewer powered by Google Gemini.</p>
+    </div>
+
+    <!-- Feature Cards Row -->
+    <div class="features-row">
+      <div class="feature-card">
+        <div class="feature-icon">🎙️</div>
+        <h3>Voice Interview</h3>
+        <p>Speak naturally — Alex listens, evaluates, and responds in real-time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>Resume Tailored</h3>
+        <p>Upload your resume for questions based on your actual experience.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Detailed Scoring</h3>
+        <p>Get a scorecard with strengths, improvements, and a hire verdict.</p>
+      </div>
+    </div>
+
+    <!-- Resume Upload Card -->
+    <div class="card resume-card">
+      <div class="panel-header">
+        <span class="panel-title">📄 Resume Upload</span>
+        <span class="panel-subtitle">Optional — upload to get tailored questions & a resume score</span>
+      </div>
+
+      <div class="drop-zone" id="drop-zone">
+        <div class="drop-zone-visual">
+          <div class="upload-icon-ring">
+            <div class="upload-icon-ring inner"></div>
+            <span class="upload-icon">📎</span>
+          </div>
+        </div>
+        <p class="drop-zone-text">Drag & drop your resume (PDF) here</p>
+        <p class="drop-zone-hint">or click to browse files</p>
+        <input type="file" id="resume-input" accept=".pdf" hidden />
+      </div>
+
+      <!-- Resume Analysis (hidden) -->
+      <div class="resume-analysis" id="resume-analysis" style="display:none;">
+        <div class="analysis-header">
+          <span class="analysis-file-name" id="analysis-file-name">resume.pdf</span>
+          <span class="analysis-score-badge" id="analysis-score-badge">—/10</span>
+        </div>
+        <p class="analysis-summary" id="analysis-summary"></p>
+        <div class="score-bars" id="resume-score-bars"></div>
+        <div class="analysis-lists">
+          <div class="analysis-list strengths">
+            <h4>✅ Strengths</h4>
+            <ul id="resume-strengths"></ul>
+          </div>
+          <div class="analysis-list improvements">
+            <h4>🔧 Areas to Improve</h4>
+            <ul id="resume-improvements"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div class="resume-loading" id="resume-loading" style="display:none;">
+        <div class="spinner"></div>
+        <p>Analyzing your resume with AI...</p>
+      </div>
+
+      <div class="btn-row" style="margin-top:20px;">
+        <button class="btn-primary" id="start-btn" onclick="startInterview()">
+          <span class="btn-shimmer"></span>
+          ▶ Start Interview
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ PHASE 2: Interview (Split Layout) ══════════════ -->
+  <div id="interview-phase" style="display:none;">
+
+    <div class="interview-layout">
+      <!-- LEFT: Interviewer Panel -->
+      <div class="interviewer-panel">
+        <div class="avatar-container">
+          <!-- Concentric rings -->
+          <div class="concentric-rings" id="concentric-rings">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="ring ring-4"></div>
+          </div>
+          <div class="avatar-circle">
+            <span>🧑‍💼</span>
+          </div>
+        </div>
+        <h2 class="interviewer-name">Alex Chen</h2>
+        <p class="interviewer-role">Senior Technical Interviewer</p>
+        <div class="status-badge" id="status-badge">
+          <span class="status-dot"></span>
+          <span id="status-text">Ready</span>
+        </div>
+
+        <!-- Session Info -->
+        <div class="session-info">
+          <div class="session-stat">
+            <span class="stat-value" id="question-count">0</span>
+            <span class="stat-label">Questions</span>
+          </div>
+          <div class="session-divider"></div>
+          <div class="session-stat">
+            <span class="stat-value" id="session-time">0:00</span>
+            <span class="stat-label">Duration</span>
+          </div>
+        </div>
+
+        <!-- Mini Resume Preview (only shown if uploaded) -->
+        <div class="resume-preview" id="resume-preview" style="display:none;">
+          <div class="resume-preview-header">
+            <span class="resume-preview-title">📄 Your Resume</span>
+          </div>
+          <div class="resume-preview-frame">
+            <iframe id="resume-iframe" title="Resume Preview"></iframe>
+          </div>
+          <span class="resume-preview-name" id="resume-preview-name">resume.pdf</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Transcript -->
+      <div class="transcript-panel card">
+        <div class="panel-header">
+          <span class="panel-title">💬 Live Transcript</span>
+          <span class="panel-subtitle" id="transcript-count">0 messages</span>
+        </div>
+
+        <div class="transcript-scroll" id="transcript-scroll">
+          <div class="empty-state" id="empty-state">
+            <div class="icon">🎙️</div>
+            <p>Alex is preparing the first question…</p>
+          </div>
+        </div>
+
+        <div class="typing-indicator" id="typing-indicator">
+          <div class="msg-avatar">🧑‍💼</div>
+          <div class="typing-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Controls -->
+    <div class="controls-bar">
+      <!-- Left Waveform -->
+      <div class="waveform-side" id="waveform-left"></div>
+
+      <!-- Center: Mic Button -->
+      <div class="mic-container">
+        <div class="mic-ring" id="mic-ring"></div>
+        <button class="record-btn disabled" id="record-btn" onclick="toggleRecord()">
+          <span class="btn-icon" id="record-icon">🎙️</span>
+        </button>
+        <span class="mic-label" id="record-label">Wait…</span>
+      </div>
+
+      <!-- Right Waveform -->
+      <div class="waveform-side" id="waveform-right"></div>
+    </div>
+
+    <!-- Sub-controls -->
+    <div class="sub-controls">
+      <div class="timer" id="timer">⏺ 0:00</div>
+      <div class="progress-bar-wrap" id="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+      </div>
+      <p class="hint-text" id="hint-text">Alex is speaking. Wait for him to finish, then click the mic.</p>
+      <div class="btn-row">
+        <button class="btn-end" id="end-btn" onclick="endInterview()">🏁 End Interview & Get Score</button>
+        <button class="btn-ghost" onclick="resetInterview()">↺ Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ PHASE 3: Final Scorecard ══════════════ -->
+  <div id="scorecard-phase" style="display:none;">
+    <div class="card scorecard">
+      <div class="scorecard-header">
+        <h2>📊 Interview Scorecard</h2>
+        <p>Here's how you performed in this mock interview session.</p>
+      </div>
+
+      <div class="scorecard-section">
+        <div class="scorecard-section-header">
+          <span class="scorecard-section-title">🎤 Interview Performance</span>
+          <span class="scorecard-big-score" id="interview-big-score">—/10</span>
+        </div>
+        <div class="verdict-badge" id="verdict-badge">—</div>
+        <p class="scorecard-summary" id="interview-summary"></p>
+        <div class="score-bars" id="interview-score-bars"></div>
+        <div class="analysis-lists">
+          <div class="analysis-list strengths">
+            <h4>✅ Strengths</h4>
+            <ul id="interview-strengths"></ul>
+          </div>
+          <div class="analysis-list improvements">
+            <h4>🔧 Areas to Improve</h4>
+            <ul id="interview-improvements"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="scorecard-section" id="resume-score-section" style="display:none;">
+        <div class="scorecard-section-header">
+          <span class="scorecard-section-title">📄 Resume Score</span>
+          <span class="scorecard-big-score" id="resume-big-score">—/10</span>
+        </div>
+        <p class="scorecard-summary" id="resume-final-summary"></p>
+        <div class="score-bars" id="resume-final-bars"></div>
+      </div>
+
+      <div class="btn-row" style="margin-top:24px;">
+        <button class="btn-primary" onclick="location.reload()">🔄 Start New Session</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Powered by Google Gemini · OpenAI Whisper · Edge TTS
+  </footer>
+</div>
+
+<div id="toast-container"></div>
+<script src="app.js?v=6"></script>
+</body>
+</html>

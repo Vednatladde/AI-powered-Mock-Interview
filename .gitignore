@@ -1,0 +1,56 @@
+# ─── Environment / Secrets ───
+.env
+.env.local
+.env.production
+
+# ─── Python ───
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# ─── Node / Next.js ───
+node_modules/
+.next/
+out/
+
+# ─── IDE ───
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── OS ───
+.DS_Store
+Thumbs.db
+
+# ─── Session / Database ───
+session_data/
+*.db
+*.sqlite3
+
+# ─── Large binary/report files (not needed in repo) ───
+*.pdf
+*.pptx
+*.zip
+*.eps
+logo.eps
+final.pdf
+final.pptx
+major-project_report.pdf
+major-project_report.zip
+major_project_report_new.pdf
+
+# ─── Internal planning / dev notes ───
+TASKS.md
+progress.txt
+roadmap.md
+academic_report_points.md
+detailed_project_report.md
+project_documentation.md
+text_interview.py
+ui-ux-pro-max-skill-main/

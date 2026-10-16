@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FAFAF9;
+  color: #111110;
+  overflow-x: hidden;
+}
+
+/* ── Light Glass card ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.ghost-border {
+  outline: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* ── Soft shadow utility ── */
+.card-shadow {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 12px rgba(0,0,0,0.06),
+    0 12px 32px rgba(0,0,0,0.05);
+}
+
+.card-shadow-lg {
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 8px 24px rgba(0,0,0,0.08),
+    0 24px 64px rgba(0,0,0,0.07);
+}
+
+/* ── Indigo glow ── */
+.indigo-glow {
+  box-shadow: 0 0 28px rgba(79, 70, 229, 0.22);
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EFF0;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(79, 70, 229, 0.18);
+  color: #111;
+}
+
+/* ── Infinite marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* ── Floating orb blur ── */
+.orb {
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(80px);
+  position: absolute;
+}

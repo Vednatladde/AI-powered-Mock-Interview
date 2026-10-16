@@ -1,0 +1,36 @@
+{
+  "name": "ai-powered-mock-interview-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Next.js 15 frontend interface for AI-powered Mock Interview Studio with live voice, code editor, and scoring",
+  "author": "Vedant Ladde (https://github.com/Vednatladde)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vednatladde/AI-powered-Mock-Interview.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.18.2",
+    "next": "^15.5.14",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "^16.2.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

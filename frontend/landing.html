@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mock Interview Studio | Ace Your Job Interview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#001f25",
+                    "outline": "#988d9f",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-dim": "#131313",
+                    "surface-tint": "#ddb7ff",
+                    "on-primary-fixed-variant": "#6900b3",
+                    "on-tertiary-container": "#36007d",
+                    "surface-container": "#201f1f",
+                    "outline-variant": "#4d4354",
+                    "secondary-fixed-dim": "#2fd9f4",
+                    "tertiary-fixed-dim": "#d2bbff",
+                    "secondary-container": "#00cbe6",
+                    "surface": "#131313",
+                    "on-surface-variant": "#cfc2d6",
+                    "on-secondary-fixed-variant": "#004e5a",
+                    "on-primary-fixed": "#2c0051",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-variant": "#353534",
+                    "inverse-primary": "#842bd2",
+                    "primary": "#ddb7ff",
+                    "tertiary": "#d2bbff",
+                    "tertiary-fixed": "#eaddff",
+                    "on-primary-container": "#400071",
+                    "secondary-fixed": "#a2eeff",
+                    "primary-fixed-dim": "#ddb7ff",
+                    "on-background": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary": "#3f008e",
+                    "on-secondary": "#00363e",
+                    "surface-container-highest": "#353534",
+                    "background": "#131313",
+                    "tertiary-container": "#a476ff",
+                    "on-secondary-container": "#00515d",
+                    "inverse-surface": "#e5e2e1",
+                    "on-primary": "#490080",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#313030",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#5a00c6",
+                    "primary-container": "#b76dff",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#5de6ff",
+                    "on-tertiary-fixed": "#25005a",
+                    "surface-bright": "#3a3939",
+                    "primary-fixed": "#f0dbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #e5e2e1; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .glass-card { background: rgba(58, 57, 57, 0.4); backdrop-filter: blur(20px); }
+        .ghost-border { outline: 1px solid rgba(77, 67, 84, 0.2); }
+        .neon-glow-primary { box-shadow: 0 0 15px rgba(168, 85, 247, 0.2); }
+        .neon-glow-secondary { box-shadow: 0 0 15px rgba(47, 217, 244, 0.2); }
+        .active-glow { box-shadow: 0 0 25px rgba(183, 109, 255, 0.4); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/40 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-300" data-icon="movie_edit">movie_edit</span>
+<span class="text-xl font-bold tracking-tighter text-zinc-100 font-manrope">Mock Interview Studio</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors text-sm font-medium" href="#">Features</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors text-sm font-medium" href="#">Benefits</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors text-sm font-medium" href="#">Pricing</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] neon-glow-primary">
+                Start Practicing
+            </button>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center justify-center overflow-hidden px-6">
+<!-- Background Glows -->
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full"></div>
+<div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="text-center lg:text-left space-y-8">
+<div class="inline-flex items-center gap-2 bg-surface-container-high/50 border border-outline-variant/20 px-4 py-2 rounded-full backdrop-blur-md">
+<span class="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-medium text-secondary-fixed-dim uppercase tracking-widest">AI Performance Engine Active</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-manrope font-extrabold tracking-tight leading-[1.1] text-on-surface">
+                        Ace Your Job <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-container">Interview with AI</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl mx-auto lg:mx-0 font-body leading-relaxed">
+                        Practice with realistic mock interviews, receive personalized feedback, and land your dream job with our high-fidelity AI coach.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+                            Start Free Trial
+                        </button>
+<button class="bg-white/5 border border-white/10 text-on-surface px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-md hover:bg-white/10 transition-all">
+                            Watch Demo
+                        </button>
+</div>
+<div class="flex items-center justify-center lg:justify-start gap-4 pt-6">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="portrait of a young professional woman smiling, studio lighting, clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZHWj-aVzatRxuUEm1N_z1qITIf00ugJU6fxpLmb4SST7acVnxNmykiGGBKK1U4J-Qx5jq2c7iWxavPatDb3hE7QGn6KzKDBjIUvNvhxl8Ev001a__6P0kH4zxgSURPUtG3gxoWsMfNaprLR_53Kz8L6B7NFVVxRhzoTswXZ7VV4iyZ3odwhT0SwP0rZxNGilPeWazRUKoPOxtwjZqeB-glPF0EOLit3o_96KJp0qKWJKxfpvylyIcZxlTfwpQFK52-mdmxjvoz9HJ"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="portrait of a middle-aged professional man in a suit, soft ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUDVF5hWzfvvrO6LZYB87v-njfM_T9C19SQPNV5uXa8AgKwZYjc_3CQDXRKMhq5B09V87U1KrZPh4A0cc4zNvIjM1moZqvN6I9lv8TQXmh0pgKS2dliUKqOsSNpW_9YMWofmToh6P8CeMwJERwwlVIykyo1f5To8oJJR8EN3dQyQIC1OUmta-3hGBOTTvW3M49aLZzlXvTa8yaWVJaQZpfeuv9CFFG66VEUMKR1x7Qh55LWJCJn2ZI8RESVNuzaEDfTjXtX90FApqc"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="portrait of a confident business person, cinematic office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMy_zN4uZBZ0Pe0RkgQ56IUEH3DaMMlTHar1Q_Eyz67uxzhfK6GeAdpcgybo4rDo-D0RPkNrQpcR06YGU54hDtG54qc9GUYeiuKJsiOYIlsvPIlNaie5Bpj-EgLmkm_xoypf5maOC04-h1e7uq5sgmjrlRUqkLQEwnDex4-Gw-bBYCNCflbgCxtfI8Krkf4ST06kYQcId7uXIibedYSj7Z6RsSs53EIMtv2OUGVgyf-LiRJsMBMAeQxAuSzH_5cFaVmr9PXLfd6NlD"/>
+</div>
+<p class="text-sm text-on-surface-variant font-medium">
+<span class="text-secondary-fixed-dim font-bold">4.8/5</span> by 20,000+ top performers
+                        </p>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+<div class="relative bg-surface-container-low border border-outline-variant/30 rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full aspect-square lg:aspect-video object-cover opacity-80" data-alt="Cinematic high-tech digital human face glowing with purple and blue data particles in a dark studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGQWMmJqQkLAV2x-0qhHRsqIJCz1UD5f3jk3f_KFw8TJCqeqt3JGRPt5GhvZfTQQebefUkYyzhlxvGGkcKd5yHAzGyC4RCzaoYJMMpCoPgVZnDX81fyfflY1ADKnA_wIwgsv814lCUqtpeGQZKCPYm0mhwGwpVAaJXjoTPVNalAZjOsHgMAiY22bZvoPaVAprfGKOsB01GVkrMfaoecA40cEHWsrkhlqHbCiKor8eFE3WQuZSYrN4odHybsJdg68NYLOkAZ01_WXlA"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="graphic_eq">graphic_eq</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">AI Coach is Listening...</p>
+<div class="flex gap-1 mt-1">
+<div class="w-1 h-3 bg-secondary rounded-full animate-bounce"></div>
+<div class="w-1 h-5 bg-primary rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+<div class="w-1 h-4 bg-secondary rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+<div class="w-1 h-6 bg-primary rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-24 px-6 relative max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl md:text-5xl font-manrope font-extrabold text-on-surface">Practice Anywhere</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Our studio adapts to your needs. Choose from thousands of roles or create your own custom stage.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-card ghost-border p-8 rounded-2xl group hover:bg-white/5 transition-all duration-500">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:neon-glow-primary transition-all">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="library_books">library_books</span>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-4">Our Interview Library</h3>
+<p class="text-on-surface-variant leading-relaxed">Access 500+ templates for Tech, Finance, Marketing, and Leadership roles curated by industry experts.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-card ghost-border p-8 rounded-2xl group hover:bg-white/5 transition-all duration-500">
+<div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:neon-glow-secondary transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="language">language</span>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-4">Import from Web</h3>
+<p class="text-on-surface-variant leading-relaxed">Paste a LinkedIn or Indeed URL. Our AI will instantly dissect the role and prepare tailored questions.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-card ghost-border p-8 rounded-2xl group hover:bg-white/5 transition-all duration-500">
+<div class="w-14 h-14 rounded-xl bg-tertiary/10 flex items-center justify-center mb-6 group-hover:shadow-[0_0_15px_rgba(210,187,255,0.2)] transition-all">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="upload_file">upload_file</span>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-4">Upload a Job Post</h3>
+<p class="text-on-surface-variant leading-relaxed">Have a PDF description? Drop it in. We'll generate a custom simulation based on the specific JD requirements.</p>
+</div>
+</div>
+</section>
+<!-- AI Feedback Section -->
+<section class="py-24 px-6 bg-surface-container-low/30 backdrop-blur-sm relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2 space-y-8">
+<h2 class="text-4xl md:text-5xl font-manrope font-extrabold text-on-surface leading-tight">
+                            More Than a Score: <br/>
+<span class="text-secondary">Your Personal AI Feedback Report</span>
+</h2>
+<div class="space-y-6">
+<div class="flex gap-6 items-start">
+<div class="mt-1 w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h4 class="text-lg font-bold font-manrope mb-1">Content Analysis</h4>
+<p class="text-on-surface-variant">We analyze the semantic strength of your answers, ensuring you hit the key technical and soft-skill markers recruiters look for.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="mt-1 w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary" data-icon="record_voice_over">record_voice_over</span>
+</div>
+<div>
+<h4 class="text-lg font-bold font-manrope mb-1">Speech Analysis</h4>
+<p class="text-on-surface-variant">Identify filler words, analyze your pace, and optimize your pitch to sound professional and authoritative under pressure.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="mt-1 w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified">verified</span>
+</div>
+<div>
+<h4 class="text-lg font-bold font-manrope mb-1">Confidence Analysis</h4>
+<p class="text-on-surface-variant">Our vision AI tracks your eye contact, posture, and facial cues to ensure your body language matches your verbal expertise.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="glass-card ghost-border rounded-3xl p-2 shadow-2xl">
+<img class="w-full rounded-2xl shadow-inner object-cover aspect-[4/3]" data-alt="High-tech dashboard showing data visualization charts, pulse waves, and performance metrics in neon purple and cyan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO-sNFNLHClVPRcq_Hjg6YKc8bojpsbdQ67LN9KqB7f2_sOJ_fYMKnnRkB9BwdTuXJJFNqOvcdj10RelFhosIYZwVEUpKy16RH9fymqtYwiXDDRJLoXv3K124fMbnvfEBdAY5iE97RiIjVvVxhvqy9IsnbVcEdTGdBjVgwvInSNx7iCkqC3BqNSUWCbWCw5dKMHF51fQwkOdnHqrAtdfKTwyoNBCSKgAjgDpeItOdvu_CNVpv8mRbKViGxR74dOgoQL6dGpTRSOtX8"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl font-manrope font-extrabold text-on-surface">Choose Your Path to Mastery</h2>
+<p class="text-on-surface-variant">Simple, transparent pricing for every stage of your job search.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Free Plan -->
+<div class="glass-card ghost-border p-8 rounded-2xl flex flex-col hover:border-outline-variant transition-colors">
+<div class="mb-8">
+<h3 class="text-xl font-bold font-manrope text-on-surface">Starter</h3>
+<div class="mt-4 flex items-baseline">
+<span class="text-4xl font-extrabold font-manrope">$0</span>
+<span class="ml-2 text-on-surface-variant">/forever</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+                            2 Mock Interviews / Month
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+                            Basic Speech Analysis
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+                            General Question Library
+                        </li>
+</ul>
+<button class="w-full py-3 rounded-xl border border-outline-variant font-bold text-on-surface hover:bg-white/5 transition-all">
+                        Get Started
+                    </button>
+</div>
+<!-- Monthly Plan -->
+<div class="bg-surface-container-high border-2 border-primary p-8 rounded-2xl flex flex-col relative scale-105 shadow-2xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary-container px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Most Popular
+                    </div>
+<div class="mb-8">
+<h3 class="text-xl font-bold font-manrope text-on-surface">Pro Performer</h3>
+<div class="mt-4 flex items-baseline">
+<span class="text-4xl font-extrabold font-manrope">$29</span>
+<span class="ml-2 text-on-surface-variant">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Unlimited Mock Interviews
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Deep Content &amp; Speech Insights
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Video Confidence Feedback
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            AI Role Matching
+                        </li>
+</ul>
+<button class="w-full py-3 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold text-lg active-glow transition-all">
+                        Go Pro
+                    </button>
+</div>
+<!-- Yearly Plan -->
+<div class="glass-card ghost-border p-8 rounded-2xl flex flex-col hover:border-outline-variant transition-colors">
+<div class="mb-8">
+<h3 class="text-xl font-bold font-manrope text-on-surface">Elite Studio</h3>
+<div class="mt-4 flex items-baseline">
+<span class="text-4xl font-extrabold font-manrope">$199</span>
+<span class="ml-2 text-on-surface-variant">/year</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+                            Everything in Pro
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+                            Priority Feature Access
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+                            Personal Branding Coaching
+                        </li>
+</ul>
+<button class="w-full py-3 rounded-xl border border-outline-variant font-bold text-on-surface hover:bg-white/5 transition-all">
+                        Upgrade Yearly
+                    </button>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6">
+<div class="max-w-5xl mx-auto glass-card border border-white/10 rounded-[2rem] p-12 text-center relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+<h2 class="text-4xl md:text-5xl font-manrope font-extrabold mb-6">Ready to land that offer?</h2>
+<p class="text-xl text-on-surface-variant mb-10 max-w-2xl mx-auto">Join thousands of job seekers who have mastered their interview performance with AI.</p>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 active:scale-95 transition-all neon-glow-primary">
+                    Start Your Performance Ritual
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 w-full py-12 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-400" data-icon="movie_edit">movie_edit</span>
+<span class="text-lg font-bold text-zinc-200 font-manrope">Mock Interview Studio</span>
+</div>
+<p class="text-zinc-500 font-inter text-sm tracking-wide">© 2024 Mock Interview Studio. The Neon Sanctum.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors text-sm tracking-wide font-inter" href="#">Features</a>
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors text-sm tracking-wide font-inter" href="#">Benefits</a>
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors text-sm tracking-wide font-inter" href="#">Pricing</a>
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors text-sm tracking-wide font-inter" href="#">Privacy</a>
+<a class="text-zinc-500 hover:text-cyan-400 transition-colors text-sm tracking-wide font-inter" href="#">Terms</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all text-zinc-400 hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all text-zinc-400 hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

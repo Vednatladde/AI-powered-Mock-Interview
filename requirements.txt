@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+google-genai
+pdfplumber
+openai-whisper
+edge-tts
+python-dotenv
+httpx
+pydantic
+slowapi
